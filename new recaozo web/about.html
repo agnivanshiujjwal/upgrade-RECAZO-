@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABOUT US | RECAZO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .about-header {
+            padding-top: 200px;
+            padding-bottom: 5rem;
+            text-align: center;
+            background: linear-gradient(to bottom, #111, var(--primary-bg));
+        }
+
+        .story-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-bottom: 8rem;
+        }
+
+        .story-img {
+            aspect-ratio: 4/5;
+            background: #222;
+        }
+
+        .mission-vision-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .mv-card {
+            background: var(--secondary-bg);
+            padding: 4rem 3rem;
+            border-top: 3px solid var(--accent-color);
+        }
+
+        .mv-card h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-text);
+        }
+
+        .mv-card p {
+            color: var(--secondary-text);
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 992px) {
+            .story-section, .mission-vision-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="header" class="scrolled">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">RECAZO</a>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="shop.html">Shop</a>
+                    <a href="custom.html">Custom</a>
+                    <a href="gift.html" style="color: #FF0000; font-weight: bold;">Gift 🎁</a>
+                    <a href="about.html" style="border-bottom: 2px solid var(--primary-text)">About</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="nav-icons">
+                    <div class="cart-icon-wrapper" id="cart-icon">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span class="cart-count">0</span>
+                    </div>
+                    <div class="menu-toggle" id="mobile-menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="about-header">
+        <div class="container">
+            <h1 style="font-size: 4rem; letter-spacing: 0.1em;">OUR STORY</h1>
+        </div>
+    </div>
+
+    <section>
+        <div class="container">
+            
+            <div class="story-section">
+                <div class="story-text">
+                    <h2 class="section-title" style="text-align: left;">Born in the Shadows</h2>
+                    <p style="font-size: 1.1rem; color: var(--secondary-text); margin-bottom: 1.5rem;">Recazo started in a small setup with a big vision: to create something more than just clothes. We wanted to build an identity.</p>
+                    <p style="font-size: 1.1rem; color: var(--secondary-text); margin-bottom: 1.5rem;">We noticed that the fashion industry was becoming repetitive. Fast fashion was killing the art of dressing, and everything looked the same. We asked ourselves, "Why settle for ordinary?"</p>
+                    <p style="font-size: 1.1rem; color: var(--primary-text); font-weight: 500;">Because ordinary isn't enough.</p>
+                </div>
+                <div class="story-img">
+                    <div class="placeholder-img" style="font-size: 1.5rem; color: #444;">Brand Genesis</div>
+                </div>
+            </div>
+
+            <div class="mission-vision-grid">
+                <div class="mv-card">
+                    <h3>OUR MISSION</h3>
+                    <p>To empower the youth with bold, unapologetic fashion that breaks the mold. We deliver premium, luxury streetwear aesthetics that allow you to express your truest self without saying a word.</p>
+                </div>
+                <div class="mv-card">
+                    <h3>OUR VISION</h3>
+                    <p>To build India's next big streetwear phenomenon. A brand that isn't just worn, but lived in. A movement of rebels, creatives, and individuals who redefine what it means to be stylish in the modern world.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">RECAZO</a>
+                    <p class="footer-desc">Because Ordinary Isn't Enough. India's premium streetwear brand for the bold and rebellious.</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 RECAZO. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>

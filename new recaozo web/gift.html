@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORDER A GIFT | RECAZO</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .gift-section {
+            padding-top: 150px;
+            padding-bottom: 5rem;
+            position: relative;
+            background-color: var(--primary-bg);
+            color: var(--primary-text);
+        }
+
+        .gift-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .gift-title {
+            font-size: 3.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            color: var(--primary-text);
+        }
+
+        .gift-subtitle {
+            font-size: 1.2rem;
+            color: var(--secondary-text);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .gift-layout {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        /* LIVE PREVIEW AREA (Step 5 embedded) */
+        .gift-preview-container {
+            position: sticky;
+            top: 100px;
+            background: linear-gradient(145deg, #111111, #1a1a1a);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            aspect-ratio: 4/5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5), inset 0 0 100px rgba(0,0,0,0.8);
+            overflow: hidden;
+            flex-direction: column;
+            padding: 2rem;
+        }
+
+        .preview-mockup-wrapper {
+            position: relative;
+            width: 80%;
+            height: 70%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s ease;
+        }
+
+        /* MOCKUPS */
+        .mockup-item {
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: #222;
+            -webkit-mask-size: contain;
+            -webkit-mask-repeat: no-repeat;
+            -webkit-mask-position: center;
+            mask-size: contain;
+            mask-repeat: no-repeat;
+            mask-position: center;
+            transition: opacity 0.3s ease, background-color 0.3s ease;
+            opacity: 0;
+            z-index: 1;
+        }
+        .mockup-item.active {
+            opacity: 1;
+        }
+
+        .mask-tshirt {
+            -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M30,15 C40,15 40,25 50,25 C60,25 60,15 70,15 L90,45 L75,50 L75,95 L25,95 L25,50 L10,45 Z"/></svg>');
+        }
+        .mask-hoodie {
+            -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M40,10 C50,0 60,10 60,10 C60,10 65,20 65,25 L85,40 L75,50 L75,95 L25,95 L25,50 L15,40 L35,25 C35,20 40,10 40,10 Z"/></svg>');
+        }
+        .mask-mug {
+            -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect x="30" y="20" width="40" height="60" rx="5" ry="5"/><path d="M70,30 h10 c5,0 10,5 10,15 v10 c0,10 -5,15 -10,15 h-10" fill="none" stroke="black" stroke-width="8"/></svg>');
+            background-color: #f5f5f5;
+        }
+        .mask-poster {
+            -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect x="25" y="10" width="50" height="80"/></svg>');
+            background-color: #f5f5f5;
+        }
+
+        /* DESIGN LAYERS */
+        .design-layer {
+            position: absolute;
+            max-width: 40%;
+            max-height: 40%;
+            object-fit: contain;
+            z-index: 5;
+            mix-blend-mode: screen;
+            pointer-events: none;
+            opacity: 0.8;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        .text-layer {
+            position: absolute;
+            z-index: 6;
+            color: #ffffff;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            white-space: pre-wrap;
+            cursor: move;
+            user-select: none;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            border: 1px dashed transparent;
+            padding: 5px;
+        }
+        .text-layer:hover {
+            border-color: rgba(255,255,255,0.5);
+        }
+
+        /* PREVIEW EXTRAS */
+        .pkg-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0,0,0,0.6);
+            backdrop-filter: blur(5px);
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid rgba(255,255,255,0.1);
+            color: var(--secondary-text);
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .gift-message-preview {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(20px);
+            background: rgba(255,255,255,0.95);
+            color: #111;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+            width: 80%;
+            text-align: center;
+            font-family: 'Georgia', serif;
+            font-style: italic;
+            font-size: 1rem;
+            opacity: 0;
+            transition: all 0.4s ease;
+            z-index: 10;
+        }
+        .gift-message-preview.visible {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* CONTROLS AREA */
+        .steps-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .step-block {
+            background: rgba(20, 20, 20, 0.4);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        .step-block:hover {
+            border-color: rgba(255,255,255,0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+
+        .step-heading {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            color: var(--primary-text);
+        }
+        .step-num {
+            background: var(--accent-color);
+            color: #fff;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            font-weight: 900;
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+        }
+
+        /* GRID OPTIONS */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+
+        .selectable-card {
+            background: rgba(0,0,0,0.3);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .selectable-card:hover {
+            background: rgba(255,255,255,0.03);
+            border-color: rgba(255,255,255,0.2);
+        }
+        .selectable-card.selected {
+            border-color: var(--primary-text);
+            background: rgba(255,255,255,0.05);
+            box-shadow: 0 0 15px rgba(255,255,255,0.05);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-text);
+            transition: color 0.3s;
+        }
+        .selectable-card:hover .card-icon,
+        .selectable-card.selected .card-icon {
+            color: var(--primary-text);
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .card-price {
+            font-size: 0.9rem;
+            color: var(--secondary-text);
+        }
+
+        .premium-badge {
+            position: absolute;
+            top: 10px; right: 10px;
+            background: var(--accent-color);
+            color: #fff;
+            font-size: 0.7rem;
+            font-weight: 800;
+            padding: 0.2rem 0.6rem;
+            border-radius: 20px;
+        }
+
+        /* TABS */
+        .tab-nav {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            background: rgba(0,0,0,0.5);
+            padding: 0.3rem;
+            border-radius: 8px;
+        }
+        .tab-btn {
+            flex: 1;
+            padding: 0.8rem;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 6px;
+            font-weight: 600;
+            color: var(--secondary-text);
+            transition: all 0.3s;
+        }
+        .tab-btn.active {
+            background: var(--primary-text);
+            color: var(--primary-bg);
+        }
+        .tab-pane {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+        .tab-pane.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* FORMS */
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--secondary-text);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        .form-input {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(0,0,0,0.4);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            color: var(--primary-text);
+            font-family: inherit;
+            transition: all 0.3s;
+            outline: none;
+        }
+        .form-input:focus {
+            border-color: var(--primary-text);
+            background: rgba(0,0,0,0.6);
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* TOGGLE SWITCH */
+        .toggle-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 26px;
+        }
+        .toggle-switch input { opacity: 0; width: 0; height: 0; }
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: #333;
+            transition: .4s;
+            border-radius: 26px;
+        }
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 18px; width: 18px;
+            left: 4px; bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .toggle-slider {
+            background-color: var(--accent-color);
+        }
+        input:checked + .toggle-slider:before {
+            transform: translateX(24px);
+        }
+
+        /* PRICE SUMMARY */
+        .summary-card {
+            background: linear-gradient(135deg, rgba(20,20,20,0.8), rgba(10,10,10,0.9));
+            border: 1px solid var(--accent-color);
+        }
+        .summary-line {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            color: var(--secondary-text);
+        }
+        .summary-total {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--primary-text);
+        }
+
+        .action-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 992px) {
+            .gift-layout {
+                grid-template-columns: 1fr;
+            }
+            .gift-preview-container {
+                position: static;
+                height: 500px;
+            }
+        }
+        @media (max-width: 576px) {
+            .cards-grid, .form-row, .action-buttons {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">RECAZO</a>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="shop.html">Shop</a>
+                    <a href="custom.html">Custom</a>
+                    <a href="gift.html" style="border-bottom: 2px solid #FF0000; color: #FF0000;">Gift 🎁</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="nav-icons">
+                    <div class="cart-icon-wrapper" id="cart-icon">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span class="cart-count">0</span>
+                    </div>
+                    <div class="menu-toggle" id="mobile-menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="gift-section">
+        <div class="container">
+            
+            <div class="gift-header">
+                <h1 class="gift-title">Order a Gift 🎁</h1>
+                <p class="gift-subtitle">Send a personalized gift with your custom design and message.</p>
+            </div>
+
+            <div class="gift-layout">
+
+                <!-- LEFT SIDE: LIVE PREVIEW -->
+                <div class="gift-preview-container">
+                    <div class="pkg-badge" id="preview-pkg">
+                        <i class="fa-solid fa-box-open"></i> Classic Black Box
+                    </div>
+
+                    <div class="preview-mockup-wrapper" id="mockup-wrap">
+                        <!-- Mockups -->
+                        <div class="mockup-item mask-tshirt active" id="mockup-tshirt"></div>
+                        <div class="mockup-item mask-hoodie" id="mockup-hoodie"></div>
+                        <div class="mockup-item mask-mug" id="mockup-mug"></div>
+                        <div class="mockup-item mask-poster" id="mockup-poster"></div>
+
+                        <!-- User Design & Text Layers -->
+                        <img src="" class="design-layer" id="upload-preview" style="display: none;">
+                        <div class="text-layer" id="text-preview" style="display: none;"></div>
+                    </div>
+
+                    <!-- Gift Message Overlay -->
+                    <div class="gift-message-preview" id="preview-message"></div>
+                </div>
+
+                <!-- RIGHT SIDE: STEPS -->
+                <div class="steps-container">
+
+                    <!-- Step 1: Choose Product -->
+                    <div class="step-block">
+                        <h2 class="step-heading"><span class="step-num">1</span> Choose Product</h2>
+                        <div class="cards-grid">
+                            <div class="selectable-card selected" data-type="product" data-target="tshirt" data-price="999">
+                                <i class="fa-solid fa-shirt card-icon"></i>
+                                <h3 class="card-title">Custom T-Shirt</h3>
+                                <div class="card-price">₹999</div>
+                            </div>
+                            <div class="selectable-card" data-type="product" data-target="hoodie" data-price="1999">
+                                <i class="fa-solid fa-user-ninja card-icon"></i>
+                                <h3 class="card-title">Custom Hoodie</h3>
+                                <div class="card-price">₹1,999</div>
+                            </div>
+                            <div class="selectable-card" data-type="product" data-target="mug" data-price="399">
+                                <i class="fa-solid fa-mug-hot card-icon"></i>
+                                <h3 class="card-title">Custom Mug</h3>
+                                <div class="card-price">₹399</div>
+                            </div>
+                            <div class="selectable-card" data-type="product" data-target="poster" data-price="299">
+                                <i class="fa-solid fa-image card-icon"></i>
+                                <h3 class="card-title">Custom Poster</h3>
+                                <div class="card-price">₹299</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Design -->
+                    <div class="step-block">
+                        <h2 class="step-heading"><span class="step-num">2</span> Upload or Create Design</h2>
+                        
+                        <div class="tab-nav">
+                            <div class="tab-btn active" data-tab="upload">Upload Your Design</div>
+                            <div class="tab-btn" data-tab="editor">Use Design Editor</div>
+                        </div>
+
+                        <!-- Upload Pane -->
+                        <div class="tab-pane active" id="pane-upload">
+                            <label class="form-label">Select Image (PNG, JPG, SVG)</label>
+                            <input type="file" id="design-file" class="form-input" accept="image/png, image/jpeg, image/svg+xml">
+                            <p style="font-size: 0.8rem; color: #888; margin-top: 0.5rem;"><i class="fa-solid fa-circle-info"></i> Transparent background recommended for apparel.</p>
+                        </div>
+
+                        <!-- Editor Pane -->
+                        <div class="tab-pane" id="pane-editor">
+                            <label class="form-label">Add Text</label>
+                            <input type="text" id="editor-text" class="form-input" placeholder="Type something cool..." style="margin-bottom: 1rem;">
+                            
+                            <div class="form-row" style="margin-bottom: 1rem;">
+                                <div>
+                                    <label class="form-label">Font Family</label>
+                                    <select id="editor-font" class="form-input">
+                                        <option value="var(--font-main)">Recazo Default</option>
+                                        <option value="Arial, sans-serif">Arial Bold</option>
+                                        <option value="'Courier New', monospace">Courier</option>
+                                        <option value="'Impact', sans-serif">Impact</option>
+                                        <option value="'Georgia', serif">Georgia Serif</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="form-label">Text Color</label>
+                                    <div style="display: flex; align-items: center; background: rgba(0,0,0,0.4); border: 1px solid var(--border-color); border-radius: 6px; padding: 0.5rem; gap: 0.5rem;">
+                                        <input type="color" id="editor-color" value="#ffffff" style="background: none; border: none; height: 35px; width: 35px; cursor: pointer;">
+                                        <span id="color-hex" style="font-family: monospace; font-size: 0.9rem;">#FFFFFF</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p style="font-size: 0.8rem; color: #888;"><i class="fa-solid fa-arrows-up-down-left-right"></i> You can drag to position the text on the preview.</p>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Gift Wishes -->
+                    <div class="step-block">
+                        <h2 class="step-heading"><span class="step-num">3</span> Add Gift Wishes</h2>
+                        
+                        <div class="toggle-wrapper">
+                            <div>
+                                <h4 style="margin-bottom: 0.2rem;">Add Gift Message</h4>
+                                <p style="font-size: 0.8rem; color: var(--secondary-text);">We'll include a beautifully printed card (+₹50).</p>
+                            </div>
+                            <label class="toggle-switch">
+                                <input type="checkbox" id="wishes-toggle">
+                                <span class="toggle-slider"></span>
+                            </label>
+                        </div>
+
+                        <div id="wishes-editor-area" style="display: none; margin-top: 1.5rem; animation: fadeIn 0.3s ease;">
+                            <label class="form-label">Your Message</label>
+                            <textarea id="wishes-text" class="form-input" rows="4" placeholder="Write your wishes for the gift receiver... e.g. Happy Birthday 🎉 Stay awesome always!"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Packaging -->
+                    <div class="step-block">
+                        <h2 class="step-heading"><span class="step-num">4</span> Choose Packaging Style</h2>
+                        
+                        <div class="cards-grid">
+                            <div class="selectable-card selected" data-type="packaging" data-name="Classic Black Box">
+                                <div class="premium-badge">⭐ Most Premium</div>
+                                <div style="height: 60px; background: #0b0b0b; border: 1px solid #333; border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                                    <span style="color: var(--accent-color); font-weight: 900; letter-spacing: 2px; font-size: 0.8rem;">RECAZO</span>
+                                </div>
+                                <h3 class="card-title">Classic Black Box</h3>
+                                <div class="card-price">Premium Recazo Logo</div>
+                            </div>
+
+                            <div class="selectable-card" data-type="packaging" data-name="White Elegant Box">
+                                <div style="height: 60px; background: #fff; border: 1px solid #ddd; border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                                    <span style="color: #000; font-weight: 900; font-size: 0.8rem;">RECAZO</span>
+                                </div>
+                                <h3 class="card-title">White Elegant Box</h3>
+                                <div class="card-price">Minimal Luxury</div>
+                            </div>
+
+                            <div class="selectable-card" data-type="packaging" data-name="Red Signature Box" style="grid-column: span 2; @media(min-width: 576px){grid-column: auto;}">
+                                <div style="height: 60px; background: #8c0000; border: 1px solid #ff0000; border-radius: 4px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                                    <span style="color: #fff; font-weight: 900; letter-spacing: 1px; font-size: 0.8rem;">RECAZO</span>
+                                </div>
+                                <h3 class="card-title">Red Signature Box</h3>
+                                <div class="card-price">Brand Signature Red</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 6: Recipient Details -->
+                    <div class="step-block">
+                        <h2 class="step-heading"><span class="step-num">5</span> Recipient Details</h2>
+                        
+                        <div class="form-row">
+                            <div>
+                                <label class="form-label">Receiver Name</label>
+                                <input type="text" class="form-input" placeholder="E.g. John Doe" id="recv-name">
+                            </div>
+                            <div>
+                                <label class="form-label">Phone Number</label>
+                                <input type="tel" class="form-input" placeholder="+91" id="recv-phone">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row" style="margin-bottom: 0;">
+                            <div style="grid-column: 1 / -1;">
+                                <label class="form-label">Delivery Address</label>
+                                <textarea class="form-input" rows="2" placeholder="Start typing address..." id="recv-address"></textarea>
+                            </div>
+                        </div>
+                        <div style="margin-top: 1.5rem;">
+                            <label class="form-label">Delivery Date (Optional)</label>
+                            <input type="date" class="form-input" id="recv-date">
+                        </div>
+                    </div>
+
+                    <!-- Step 7: Summary -->
+                    <div class="step-block summary-card">
+                        <h2 class="step-heading" style="margin-bottom: 2rem;"><span class="step-num" style="background: transparent; border: 2px solid var(--accent-color);">6</span> Price Summary</h2>
+                        
+                        <div class="summary-line">
+                            <span id="label-prod">Custom T-Shirt</span>
+                            <span id="price-prod">₹999</span>
+                        </div>
+                        
+                        <div class="summary-line" id="line-wishes" style="display: none;">
+                            <span>Gift Message Card</span>
+                            <span>₹50</span>
+                        </div>
+
+                        <div class="summary-line">
+                            <span>Packaging: <span id="label-pkg">Classic Black Box</span></span>
+                            <span>Free</span>
+                        </div>
+
+                        <div class="summary-total">
+                            <span>Total</span>
+                            <span id="price-total">₹999</span>
+                        </div>
+
+                        <!-- Step 8: Actions -->
+                        <div class="action-buttons">
+                            <button class="btn btn-outline" id="btn-add-cart" style="width: 100%;">
+                                <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+                            </button>
+                            <button class="btn btn-primary" id="btn-buy-now" style="width: 100%; border: none;">
+                                <i class="fa-solid fa-bolt"></i> Buy Now
+                            </button>
+                        </div>
+                    </div>
+
+                </div> <!-- End Steps -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">RECAZO</a>
+                    <p class="footer-desc">Because Ordinary Isn't Enough. India's premium streetwear brand for the bold and rebellious.</p>
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-title">Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // State
+            let basePrice = 999;
+            let wishesPrice = 0;
+
+            // DOM Elements
+            const summaryProd = document.getElementById('label-prod');
+            const summaryProdPrice = document.getElementById('price-prod');
+            const lineWishes = document.getElementById('line-wishes');
+            const summaryPkg = document.getElementById('label-pkg');
+            const summaryTotal = document.getElementById('price-total');
+            const previewPkg = document.getElementById('preview-pkg');
+
+            // Formatter
+            const formatPrice = (val) => '₹' + val.toLocaleString('en-IN');
+            
+            // Update Summary
+            const updateSummary = () => {
+                const total = basePrice + wishesPrice;
+                summaryTotal.innerText = formatPrice(total);
+                summaryProdPrice.innerText = formatPrice(basePrice);
+                if(wishesPrice > 0) {
+                    lineWishes.style.display = 'flex';
+                } else {
+                    lineWishes.style.display = 'none';
+                }
+            };
+
+            // 1. Product Selection
+            const productCards = document.querySelectorAll('.selectable-card[data-type="product"]');
+            productCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    productCards.forEach(c => c.classList.remove('selected'));
+                    card.classList.add('selected');
+                    
+                    const targetMockup = card.getAttribute('data-target');
+                    basePrice = parseInt(card.getAttribute('data-price'));
+                    
+                    // Update Summary Label
+                    summaryProd.innerText = card.querySelector('.card-title').innerText;
+                    
+                    // Update Mockup Visibility
+                    document.querySelectorAll('.mockup-item').forEach(m => m.classList.remove('active'));
+                    document.getElementById('mockup-' + targetMockup).classList.add('active');
+
+                    // Make mugs/posters text layer darker if needed
+                    const txt = document.getElementById('text-preview');
+                    if(targetMockup === 'mug' || targetMockup === 'poster') {
+                         txt.style.color = '#000';
+                         document.getElementById('editor-color').value = '#000000';
+                         document.getElementById('color-hex').innerText = '#000000';
+                    } else {
+                         txt.style.color = '#fff';
+                         document.getElementById('editor-color').value = '#ffffff';
+                         document.getElementById('color-hex').innerText = '#FFFFFF';
+                    }
+
+                    updateSummary();
+                });
+            });
+
+            // 2. Design Tabs
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+            const uploadPreview = document.getElementById('upload-preview');
+            const textPreview = document.getElementById('text-preview');
+
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    tabPanes.forEach(p => p.classList.remove('active'));
+                    
+                    btn.classList.add('active');
+                    const tabName = btn.getAttribute('data-tab');
+                    document.getElementById('pane-' + tabName).classList.add('active');
+                });
+            });
+
+            // Handle Image Upload
+            const fileInput = document.getElementById('design-file');
+            fileInput.addEventListener('change', function() {
+                if (this.files && this.files[0]) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        uploadPreview.src = e.target.result;
+                        uploadPreview.style.display = 'block';
+                        textPreview.style.display = 'none'; // hide text if image uploaded
+                        // switch tab to upload visually
+                        tabBtns[0].click();
+                        document.getElementById('editor-text').value = '';
+                    }
+                    reader.readAsDataURL(this.files[0]);
+                }
+            });
+
+            // Handle Text Editor
+            const editorText = document.getElementById('editor-text');
+            const editorFont = document.getElementById('editor-font');
+            const editorColor = document.getElementById('editor-color');
+            const colorHex = document.getElementById('color-hex');
+
+            editorText.addEventListener('input', (e) => {
+                if(e.target.value.trim() !== '') {
+                    textPreview.style.display = 'block';
+                    uploadPreview.style.display = 'none'; // hide image if text typed
+                    textPreview.innerText = e.target.value;
+                    fileInput.value = ''; // clear file
+                } else {
+                    textPreview.style.display = 'none';
+                }
+            });
+
+            editorFont.addEventListener('change', (e) => {
+                textPreview.style.fontFamily = e.target.value;
+            });
+
+            editorColor.addEventListener('input', (e) => {
+                textPreview.style.color = e.target.value;
+                colorHex.innerText = e.target.value.toUpperCase();
+            });
+
+            // Simple drag for text layer
+            let isDragging = false, currentX, currentY, initialX, initialY, xOffset = 0, yOffset = 0;
+            textPreview.addEventListener("mousedown", dragStart);
+            document.addEventListener("mouseup", dragEnd);
+            document.addEventListener("mousemove", drag);
+
+            function dragStart(e) {
+                initialX = e.clientX - xOffset;
+                initialY = e.clientY - yOffset;
+                if (e.target === textPreview) {
+                    isDragging = true;
+                }
+            }
+            function dragEnd() {
+                isDragging = false;
+            }
+            function drag(e) {
+                if (isDragging) {
+                    e.preventDefault();
+                    currentX = e.clientX - initialX;
+                    currentY = e.clientY - initialY;
+                    xOffset = currentX;
+                    yOffset = currentY;
+                    textPreview.style.transform = `translate(calc(-50% + ${currentX}px), calc(-50% + ${currentY}px))`;
+                }
+            }
+
+            // 3. Gift Wishes Toggle
+            const wishesToggle = document.getElementById('wishes-toggle');
+            const wishesArea = document.getElementById('wishes-editor-area');
+            const wishesText = document.getElementById('wishes-text');
+            const previewMessage = document.getElementById('preview-message');
+
+            wishesToggle.addEventListener('change', (e) => {
+                if(e.target.checked) {
+                    wishesArea.style.display = 'block';
+                    wishesPrice = 50;
+                    if(wishesText.value.trim() !== '') {
+                        previewMessage.classList.add('visible');
+                    }
+                } else {
+                    wishesArea.style.display = 'none';
+                    wishesPrice = 0;
+                    previewMessage.classList.remove('visible');
+                }
+                updateSummary();
+            });
+
+            wishesText.addEventListener('input', (e) => {
+                if(wishesToggle.checked) {
+                    if(e.target.value.trim() !== '') {
+                        previewMessage.innerText = `"${e.target.value}"`;
+                        previewMessage.classList.add('visible');
+                    } else {
+                        previewMessage.classList.remove('visible');
+                    }
+                }
+            });
+
+            // 4. Packaging Selection
+            const pkgCards = document.querySelectorAll('.selectable-card[data-type="packaging"]');
+            pkgCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    pkgCards.forEach(c => c.classList.remove('selected'));
+                    card.classList.add('selected');
+                    const name = card.getAttribute('data-name');
+                    summaryPkg.innerText = name;
+                    previewPkg.innerHTML = `<i class="fa-solid fa-box-open"></i> ${name}`;
+                });
+            });
+
+            // Order Actions
+            const addCartBtn = document.getElementById('btn-add-cart');
+            const buyNowBtn = document.getElementById('btn-buy-now');
+
+            const placeOrder = () => {
+                const name = document.getElementById('recv-name').value;
+                const phone = document.getElementById('recv-phone').value;
+                const address = document.getElementById('recv-address').value;
+
+                if(!name || !phone || !address) {
+                    alert('Please fill the Recipient Details (Name, Phone, Address) before placing the gift order.');
+                    return;
+                }
+
+                alert(`Gift Order Processed!\nItem: ${summaryProd.innerText}\nTotal: ${formatPrice(basePrice + wishesPrice)}\nThank you for choosing Recazo!`);
+            };
+
+            addCartBtn.addEventListener('click', placeOrder);
+            buyNowBtn.addEventListener('click', placeOrder);
+
+            // Init
+            updateSummary();
+        });
+    </script>
+</body>
+</html>
