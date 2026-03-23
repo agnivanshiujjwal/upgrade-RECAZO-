@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOP | RECAZO - Premium Streetwear Collection</title>
+    
+    <!-- Meta Tags -->
+    <meta name="description" content="Shop the latest RECAZO streetwear collection. Explore oversized tees, premium hoodies, custom prints, and more.">
+    <meta name="keywords" content="streetwear shop, oversized tees, hoodies, indian streetwear, buy streetwear online">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="SHOP | RECAZO - Premium Streetwear">
+    <meta property="og:description" content="Explore our latest collection of premium streetwear.">
+    <meta property="og:image" content="images/og-shop.jpg">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                            <a href="index.html" class="logo">
+                <img src="images\image copy 2.png" alt="RECAZO Logo">
+            </a>
+                <a href="index.html" class="logo">RECAZO</a>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="shop.html" class="active">Shop</a>
+                    <a href="custom.html">Custom</a>
+                    <a href="gift.html" class="gift-link">Gift 🎁</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="nav-icons">
+                    <div class="cart-icon-wrapper" id="cart-icon" role="button" aria-label="Shopping cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span class="cart-count">0</span>
+                    </div>
+                    <button class="menu-toggle" id="mobile-menu" aria-label="Toggle menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Shop Header -->
+    <div class="shop-header" style="padding-top: 150px; padding-bottom: 3rem; text-align: center; background: linear-gradient(to bottom, #111, var(--primary-bg));">
+        <div class="container">
+            <h1 style="font-size: 4rem; letter-spacing: 0.1em;">COLLECTION 01</h1>
+            <p class="subtitle" style="margin-top: 1rem;">Unapologetic Streetwear</p>
+        </div>
+    </div>
+
+    <!-- Breadcrumbs -->
+    <div class="breadcrumbs">
+        <div class="container">
+            <a href="index.html">Home</a> <span>/</span> <span>Shop</span>
+        </div>
+    </div>
+
+    <!-- Shop Section -->
+    <section style="padding-top: 2rem;">
+        <div class="container">
+            <!-- Search Bar -->
+            <div class="search-bar" style="margin-bottom: 2rem;">
+                <input type="text" id="search-input" placeholder="Search products..." aria-label="Search products">
+                <button id="search-btn" aria-label="Search"><i class="fa-solid fa-search"></i></button>
+            </div>
+
+            <div class="shop-layout" style="display: grid; grid-template-columns: 280px 1fr; gap: 3rem; align-items: start;">
+                
+                <!-- Filters Sidebar -->
+                <aside class="filters" style="background: var(--secondary-bg); padding: 2rem; position: sticky; top: 100px;">
+                    <h3 style="margin-bottom: 2rem; display: flex; align-items: center; gap: 10px;">
+                        <i class="fa-solid fa-sliders"></i> Filters
+                    </h3>
+                    
+                    <div class="filter-group" style="margin-bottom: 2rem;">
+                        <h4 style="margin-bottom: 1rem;">Categories</h4>
+                        <div class="filter-options">
+                            <label><input type="checkbox" checked> All Categories</label>
+                            <label><input type="checkbox"> Oversized Tees</label>
+                            <label><input type="checkbox"> Premium Hoodies</label>
+                            <label><input type="checkbox"> Accessories</label>
+                            <label><input type="checkbox"> Bottoms</label>
+                        </div>
+                    </div>
+
+                    <div class="filter-group" style="margin-bottom: 2rem;">
+                        <h4 style="margin-bottom: 1rem;">Size</h4>
+                        <div class="filter-options">
+                            <label><input type="checkbox"> S</label>
+                            <label><input type="checkbox"> M</label>
+                            <label><input type="checkbox"> L</label>
+                            <label><input type="checkbox"> XL</label>
+                            <label><input type="checkbox"> XXL</label>
+                        </div>
+                    </div>
+
+                    <div class="filter-group" style="margin-bottom: 2rem;">
+                        <h4 style="margin-bottom: 1rem;">Price Range</h4>
+                        <div class="filter-options">
+                            <label><input type="checkbox"> Under ₹999</label>
+                            <label><input type="checkbox"> ₹1000 - ₹1999</label>
+                            <label><input type="checkbox"> ₹2000 - ₹2999</label>
+                            <label><input type="checkbox"> ₹3000+</label>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4 style="margin-bottom: 1rem;">Collection</h4>
+                        <div class="filter-options">
+                            <label><input type="checkbox"> Originals</label>
+                            <label><input type="checkbox"> Dark Matter</label>
+                            <label><input type="checkbox"> Neon Nights</label>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-outline" style="width: 100%; margin-top: 2rem;" id="clear-filters">Clear Filters</button>
+                </aside>
+
+                <!-- Products Area -->
+                <div class="products-area">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px solid var(--border-color);">
+                        <p style="color: var(--secondary-text)"><span id="product-count">6</span> Products</p>
+                        <select style="background: transparent; color: var(--primary-text); border: 1px solid var(--border-color); padding: 0.5rem 1rem; outline: none; font-family: var(--font-main);" id="sort-select">
+                            <option value="featured">Featured</option>
+                            <option value="newest">Newest Arrivals</option>
+                            <option value="low-high">Price: Low to High</option>
+                            <option value="high-low">Price: High to Low</option>
+                        </select>
+                    </div>
+
+                    <div class="product-grid" id="shop-grid">
+                        <!-- Product 1 -->
+                        <div class="product-card" data-category="oversized tees" data-price="1499" data-date="2024-01-15">
+                            <button class="wishlist-btn" data-id="1" aria-label="Add to wishlist">
+                                <i class="fa-regular fa-heart"></i>
+                            </button>
+                            <div class="product-img-wrapper">
+                                <img data-src="images\Screenshot 2026-03-07 172521.png" alt="Signature Oversized Tee" class="product-img lazy-image">
+                                <div class="product-overlay">
+                                    <button class="btn btn-primary add-to-cart-btn" data-id="1" data-name="Signature Oversized Tee" data-price="1499">Add to Cart</button>
+                                    <button class="btn btn-outline quick-view-btn" data-id="1">Quick View</button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <p class="product-category">Oversized Tees</p>
+                                <h3 class="product-title">Signature Oversized Tee</h3>
+                                <p class="product-price">₹1,499</p>
+                                <div class="product-rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <span>(24)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 2 -->
+                        <div class="product-card" data-category="hoodies" data-price="2999" data-date="2024-01-20">
+                            <button class="wishlist-btn" data-id="2" aria-label="Add to wishlist">
+                                <i class="fa-regular fa-heart"></i>
+                            </button>
+                            <div class="product-img-wrapper">
+                                <img data-src="images\image.png" alt="Midnight Premium Hoodie" class="product-img lazy-image">
+                                <div class="product-overlay">
+                                    <button class="btn btn-primary add-to-cart-btn" data-id="2" data-name="Midnight Premium Hoodie" data-price="2999">Add to Cart</button>
+                                    <button class="btn btn-outline quick-view-btn" data-id="2">Quick View</button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <p class="product-category">Hoodies</p>
+                                <h3 class="product-title">Midnight Premium Hoodie</h3>
+                                <p class="product-price">₹2,999</p>
+                                <div class="product-rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <span>(42)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 3 -->
+                        <div class="product-card" data-category="oversized tees" data-price="1299" data-date="2024-01-10">
+                            <button class="wishlist-btn" data-id="3" aria-label="Add to wishlist">
+                                <i class="fa-regular fa-heart"></i>
+                            </button>
+                            <div class="product-img-wrapper">
+                                <img data-src="images\image copy.png" alt="Rebel Graphic Print" class="product-img lazy-image">
+                                <div class="product-overlay">
+                                    <button class="btn btn-primary add-to-cart-btn" data-id="3" data-name="Rebel Graphic Print" data-price="1299">Add to Cart</button>
+                                    <button class="btn btn-outline quick-view-btn" data-id="3">Quick View</button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <p class="product-category">Oversized Tees</p>
+                                <h3 class="product-title">Rebel Graphic Print</h3>
+                                <p class="product-price">₹1,299</p>
+                                <div class="product-rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <span>(18)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 4 -->
+                        <div class="product-card" data-category="oversized tees" data-price="999" data-date="2024-01-05">
+                            <button class="wishlist-btn" data-id="4" aria-label="Add to wishlist">
+                                <i class="fa-regular fa-heart"></i>
+                            </button>
+                            <div class="product-img-wrapper">
+                                <img data-src="images\image copy 7.png" alt="Phantom Blank Tee" class="product-img lazy-image">
+                                <div class="product-overlay">
+                                    <button class="btn btn-primary add-to-cart-btn" data-id="4" data-name="Phantom Blank Tee" data-price="999">Add to Cart</button>
+                                    <button class="btn btn-outline quick-view-btn" data-id="4">Quick View</button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <p class="product-category">Oversized Tees</p>
+                                <h3 class="product-title">Phantom Blank Tee</h3>
+                                <p class="product-price">₹999</p>
+                                <div class="product-rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <span>(8)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 5 -->
+                        <div class="product-card" data-category="hoodies" data-price="3499" data-date="2024-01-25">
+                            <button class="wishlist-btn" data-id="5" aria-label="Add to wishlist">
+                                <i class="fa-regular fa-heart"></i>
+                            </button>
+                            <div class="product-img-wrapper">
+                                <img data-src="images\image copy 8.png" alt="Cyberpunk Zip Hoodie" class="product-img lazy-image">
+                                <div class="product-overlay">
+                                    <button class="btn btn-primary add-to-cart-btn" data-id="5" data-name="Cyberpunk Zip Hoodie" data-price="3499">Add to Cart</button>
+                                    <button class="btn btn-outline quick-view-btn" data-id="5">Quick View</button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <p class="product-category">Hoodies</p>
+                                <h3 class="product-title">Cyberpunk Zip Hoodie</h3>
+                                <p class="product-price">₹3,499</p>
+                                <div class="product-rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <span>(15)</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Product 6 -->
+                        <div class="product-card" data-category="bottoms" data-price="2599" data-date="2024-01-18">
+                            <button class="wishlist-btn" data-id="6" aria-label="Add to wishlist">
+                                <i class="fa-regular fa-heart"></i>
+                            </button>
+                            <div class="product-img-wrapper">
+                                <img data-src="images\image copy 9.png" alt="Chaos Cargo Pants" class="product-img lazy-image">
+                                <div class="product-overlay">
+                                    <button class="btn btn-primary add-to-cart-btn" data-id="6" data-name="Chaos Cargo Pants" data-price="2599">Add to Cart</button>
+                                    <button class="btn btn-outline quick-view-btn" data-id="6">Quick View</button>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <p class="product-category">Bottoms</p>
+                                <h3 class="product-title">Chaos Cargo Pants</h3>
+                                <p class="product-price">₹2,599</p>
+                                <div class="product-rating">
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-solid fa-star"></i>
+                                    <i class="fa-regular fa-star"></i>
+                                    <span>(11)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <button class="page-link active">1</button>
+                        <button class="page-link">2</button>
+                        <button class="page-link">3</button>
+                        <button class="page-link">4</button>
+                        <button class="page-link">5</button>
+                        <button class="page-link">→</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">RECAZO</a>
+                    <p class="footer-desc">Because Ordinary Isn't Enough. India's premium streetwear brand for the bold and rebellious.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/recazo.official/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://wa.me/919876543210" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-title">Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4 class="footer-title">Join The Rebellion</h4>
+                    <form class="newsletter-form" data-validate>
+                        <input type="email" placeholder="Email Address" required>
+                        <button type="submit">→</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 RECAZO. All Rights Reserved.</p>
+                <div class="payment-methods">
+                    <i class="fa-brands fa-cc-visa fa-lg"></i>
+                    <i class="fa-brands fa-cc-mastercard fa-lg"></i>
+                    <i class="fa-brands fa-cc-paypal fa-lg"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Live Chat Widget -->
+    <div class="live-chat-widget">
+        <div class="chat-bubble" id="chat-bubble">
+            <i class="fa-solid fa-comment-dots"></i> 
+            <span class="chat-text">Need Help?</span>
+        </div>
+        <div class="chat-box" id="chat-box">
+            <div class="chat-header">
+                <h4>Recazo Support</h4>
+                <button id="close-chat"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="chat-body">
+                <div class="message incoming">Hello! How can we help you today?</div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Type a message...">
+                <button><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>

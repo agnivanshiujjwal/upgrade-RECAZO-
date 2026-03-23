@@ -1,0 +1,1557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signature Oversized Tee | RECAZO - Premium Streetwear</title>
+    
+    <!-- Meta Tags for SEO -->
+    <meta name="description" content="Shop the Signature Oversized Tee from RECAZO. Premium quality oversized t-shirt with bold design. 100% combed cotton, available in multiple colors.">
+    <meta name="keywords" content="oversized tee, streetwear t-shirt, premium cotton t-shirt, recazo signature">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Signature Oversized Tee | RECAZO">
+    <meta property="og:description" content="Premium oversized t-shirt for the bold and rebellious.">
+    <meta property="og:image" content="images/products/tee-1.jpg">
+    <meta property="og:url" content="https://recazo.com/product/signature-oversized-tee">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Additional Product Page Styles -->
+    <style>
+        /* Product Page Specific Styles */
+        .product-page {
+            padding-top: 150px;
+            padding-bottom: 5rem;
+        }
+
+        .product-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        /* Product Gallery */
+        .product-gallery {
+            position: sticky;
+            top: 100px;
+        }
+
+        .main-image {
+            aspect-ratio: 4/5;
+            background: var(--secondary-bg);
+            margin-bottom: 1rem;
+            overflow: hidden;
+            position: relative;
+            cursor: zoom-in;
+        }
+
+        .main-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .main-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .thumbnail-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.5rem;
+        }
+
+        .thumbnail {
+            aspect-ratio: 1/1;
+            background: var(--secondary-bg);
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: border-color 0.3s ease;
+            overflow: hidden;
+        }
+
+        .thumbnail.active {
+            border-color: var(--accent-color);
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .thumbnail:hover img {
+            opacity: 0.8;
+        }
+
+        /* Product Info */
+        .product-info {
+            padding-right: 2rem;
+        }
+
+        .product-badge {
+            display: inline-block;
+            background: var(--accent-color);
+            color: #fff;
+            padding: 0.3rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .product-title {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .product-price-section {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .current-price {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--primary-text);
+        }
+
+        .original-price {
+            font-size: 1.5rem;
+            color: var(--secondary-text);
+            text-decoration: line-through;
+        }
+
+        .discount-badge {
+            background: var(--accent-color);
+            color: #fff;
+            padding: 0.3rem 0.8rem;
+            font-size: 0.9rem;
+            font-weight: 700;
+            border-radius: 4px;
+        }
+
+        .product-rating-large {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .stars {
+            color: #ffc107;
+            font-size: 1.2rem;
+        }
+
+        .rating-count {
+            color: var(--secondary-text);
+        }
+
+        .product-description {
+            margin-bottom: 2rem;
+        }
+
+        .product-description h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-description p {
+            color: var(--secondary-text);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .features-list {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .features-list li {
+            margin-bottom: 0.8rem;
+            color: var(--secondary-text);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .features-list i {
+            color: var(--accent-color);
+            font-size: 1rem;
+        }
+
+        /* Size Selector */
+        .size-selector {
+            margin-bottom: 2rem;
+        }
+
+        .size-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .size-label h3 {
+            font-size: 1.1rem;
+        }
+
+        .size-guide-link {
+            color: var(--secondary-text);
+            font-size: 0.9rem;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        .size-guide-link:hover {
+            color: var(--primary-text);
+        }
+
+        .size-options {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
+
+        .size-option {
+            min-width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--primary-text);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .size-option:hover {
+            border-color: var(--primary-text);
+        }
+
+        .size-option.active {
+            background: var(--primary-text);
+            color: var(--primary-bg);
+            border-color: var(--primary-text);
+        }
+
+        .size-option.disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            text-decoration: line-through;
+        }
+
+        /* Color Selector */
+        .color-selector {
+            margin-bottom: 2rem;
+        }
+
+        .color-label {
+            margin-bottom: 1rem;
+        }
+
+        .color-options {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .color-option {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 3px solid transparent;
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .color-option.active {
+            border-color: var(--primary-text);
+            transform: scale(1.1);
+        }
+
+        .color-option:hover {
+            transform: scale(1.1);
+        }
+
+        .color-option .checkmark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            text-shadow: 0 0 3px rgba(0,0,0,0.5);
+            display: none;
+        }
+
+        .color-option.active .checkmark {
+            display: block;
+        }
+
+        /* Quantity Selector */
+        .quantity-selector {
+            margin-bottom: 2rem;
+        }
+
+        .quantity-label {
+            margin-bottom: 1rem;
+        }
+
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            border: 1px solid var(--border-color);
+            width: fit-content;
+        }
+
+        .qty-btn {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: transparent;
+            border: none;
+            color: var(--primary-text);
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .qty-btn:hover {
+            background: var(--accent-color);
+        }
+
+        .qty-input {
+            width: 80px;
+            height: 50px;
+            text-align: center;
+            background: transparent;
+            border: none;
+            border-left: 1px solid var(--border-color);
+            border-right: 1px solid var(--border-color);
+            color: var(--primary-text);
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .qty-input::-webkit-inner-spin-button,
+        .qty-input::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Action Buttons */
+        .product-actions {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .add-to-cart-btn {
+            padding: 1.5rem;
+            font-size: 1.1rem;
+            background: var(--primary-text);
+            color: var(--primary-bg);
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .add-to-cart-btn:hover {
+            background: var(--accent-color);
+            color: #fff;
+        }
+
+        .buy-now-btn {
+            padding: 1.5rem;
+            font-size: 1.1rem;
+            background: transparent;
+            color: var(--primary-text);
+            border: 1px solid var(--primary-text);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .buy-now-btn:hover {
+            background: var(--primary-text);
+            color: var(--primary-bg);
+        }
+
+        .wishlist-btn-large {
+            width: 100%;
+            padding: 1rem;
+            background: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--secondary-text);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .wishlist-btn-large:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        .wishlist-btn-large.active {
+            color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        /* Product Meta */
+        .product-meta {
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .meta-item {
+            display: flex;
+            margin-bottom: 1rem;
+        }
+
+        .meta-label {
+            width: 100px;
+            color: var(--secondary-text);
+        }
+
+        .meta-value {
+            color: var(--primary-text);
+        }
+
+        .meta-value a {
+            color: var(--secondary-text);
+            text-decoration: underline;
+        }
+
+        .meta-value a:hover {
+            color: var(--primary-text);
+        }
+
+        /* Delivery Info */
+        .delivery-info {
+            background: var(--secondary-bg);
+            padding: 2rem;
+            margin-bottom: 3rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .delivery-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .delivery-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .delivery-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+
+        .delivery-text h4 {
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .delivery-text p {
+            color: var(--secondary-text);
+            font-size: 0.9rem;
+        }
+
+        /* Tabs Section */
+        .product-tabs {
+            margin-bottom: 4rem;
+        }
+
+        .tab-headers {
+            display: flex;
+            gap: 2rem;
+            border-bottom: 1px solid var(--border-color);
+            margin-bottom: 2rem;
+        }
+
+        .tab-header {
+            padding: 1rem 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            position: relative;
+            color: var(--secondary-text);
+        }
+
+        .tab-header::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+
+        .tab-header.active {
+            color: var(--primary-text);
+        }
+
+        .tab-header.active::after {
+            width: 100%;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 2rem 0;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Specifications Table */
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .specs-table tr {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .specs-table td {
+            padding: 1rem;
+        }
+
+        .specs-table td:first-child {
+            font-weight: 600;
+            width: 200px;
+        }
+
+        .specs-table td:last-child {
+            color: var(--secondary-text);
+        }
+
+        /* Reviews Section */
+        .reviews-summary {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .average-rating {
+            text-align: center;
+        }
+
+        .average-number {
+            font-size: 4rem;
+            font-weight: 900;
+            color: var(--primary-text);
+            line-height: 1;
+        }
+
+        .average-stars {
+            color: #ffc107;
+            font-size: 1.2rem;
+            margin: 0.5rem 0;
+        }
+
+        .total-reviews {
+            color: var(--secondary-text);
+        }
+
+        .rating-bars {
+            flex: 1;
+        }
+
+        .rating-bar-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .rating-label {
+            width: 60px;
+            color: var(--secondary-text);
+        }
+
+        .rating-bar-container {
+            flex: 1;
+            height: 8px;
+            background: var(--border-color);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .rating-bar-fill {
+            height: 100%;
+            background: #ffc107;
+            border-radius: 4px;
+        }
+
+        .rating-percent {
+            width: 50px;
+            color: var(--secondary-text);
+        }
+
+        .review-card {
+            background: var(--secondary-bg);
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--border-color);
+        }
+
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .reviewer-name {
+            font-weight: 600;
+        }
+
+        .review-date {
+            color: var(--secondary-text);
+            font-size: 0.9rem;
+        }
+
+        .review-rating {
+            color: #ffc107;
+            margin-bottom: 1rem;
+        }
+
+        .review-text {
+            color: var(--secondary-text);
+            line-height: 1.8;
+        }
+
+        /* Related Products */
+        .related-products {
+            margin-top: 5rem;
+        }
+
+        .related-title {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        /* Size Chart Modal */
+        .size-chart-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            backdrop-filter: blur(5px);
+            z-index: 10000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .size-chart-modal.active {
+            display: flex;
+        }
+
+        .size-chart-content {
+            background: var(--secondary-bg);
+            max-width: 600px;
+            width: 90%;
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            position: relative;
+            animation: modalPop 0.3s ease;
+        }
+
+        @keyframes modalPop {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: transparent;
+            border: none;
+            color: var(--primary-text);
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .product-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .product-gallery {
+                position: static;
+            }
+
+            .product-info {
+                padding-right: 0;
+            }
+
+            .reviews-summary {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .product-page {
+                padding-top: 120px;
+            }
+
+            .product-title {
+                font-size: 2rem;
+            }
+
+            .current-price {
+                font-size: 2rem;
+            }
+
+            .product-actions {
+                grid-template-columns: 1fr;
+            }
+
+            .tab-headers {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            .tab-header {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .thumbnail-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+
+            .size-option {
+                min-width: 50px;
+                height: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav>            <a href="index.html" class="logo">
+                <img src="images\image copy 2.png" alt="RECAZO Logo">
+            </a>
+                <a href="index.html" class="logo">RECAZO</a>
+                
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="shop.html">Shop</a>
+                    <a href="custom.html">Custom</a>
+                    <a href="gift.html" class="gift-link">Gift 🎁</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                
+                <div class="nav-icons">
+                    <div class="cart-icon-wrapper" id="cart-icon" role="button" aria-label="Shopping cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span class="cart-count">0</span>
+                    </div>
+                    <button class="menu-toggle" id="mobile-menu" aria-label="Toggle menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Product Page Main Section -->
+    <section class="product-page">
+        <div class="container">
+            <!-- Breadcrumbs -->
+            <div class="breadcrumbs">
+                <a href="index.html">Home</a> <span>/</span>
+                <a href="shop.html">Shop</a> <span>/</span>
+                <a href="shop.html?category=tees">Oversized Tees</a> <span>/</span>
+                <span>Signature Oversized Tee</span>
+            </div>
+
+            <!-- Product Main Container -->
+            <div class="product-container">
+                <!-- Product Gallery -->
+                <div class="product-gallery">
+                    <div class="main-image" id="main-image">
+                        <img src="images/products/tee-1.jpg" alt="Signature Oversized Tee - Front View" id="main-product-image">
+                    </div>
+                    <div class="thumbnail-grid">
+                        <div class="thumbnail active" data-image="images/products/tee-1.jpg">
+                            <img src="images/products/tee-1-thumb.jpg" alt="Front view">
+                        </div>
+                        <div class="thumbnail" data-image="images/products/tee-1-back.jpg">
+                            <img src="images/products/tee-1-back-thumb.jpg" alt="Back view">
+                        </div>
+                        <div class="thumbnail" data-image="images/products/tee-1-model.jpg">
+                            <img src="images/products/tee-1-model-thumb.jpg" alt="Model wearing">
+                        </div>
+                        <div class="thumbnail" data-image="images/products/tee-1-detail.jpg">
+                            <img src="images/products/tee-1-detail-thumb.jpg" alt="Detail shot">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="product-info">
+                    <span class="product-badge">New Arrival</span>
+                    
+                    <h1 class="product-title">Signature Oversized Tee</h1>
+                    
+                    <div class="product-price-section">
+                        <span class="current-price">₹1,499</span>
+                        <span class="original-price">₹2,499</span>
+                        <span class="discount-badge">40% OFF</span>
+                    </div>
+
+                    <div class="product-rating-large">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <span class="rating-count">(24 verified reviews)</span>
+                    </div>
+
+                    <div class="product-description">
+                        <h3>Description</h3>
+                        <p>The Signature Oversized Tee is the cornerstone of the RECAZO collection. Crafted for those who refuse to blend in, this piece combines premium comfort with bold streetwear aesthetics.</p>
+                    </div>
+
+                    <ul class="features-list">
+                        <li><i class="fa-solid fa-check"></i> 100% Premium Combed Cotton</li>
+                        <li><i class="fa-solid fa-check"></i> Oversized Relaxed Fit</li>
+                        <li><i class="fa-solid fa-check"></i> Screen Printed Graphic</li>
+                        <li><i class="fa-solid fa-check"></i> Pre-shrunk Fabric</li>
+                        <li><i class="fa-solid fa-check"></i> Made in India</li>
+                    </ul>
+
+                    <!-- Color Selector -->
+                    <div class="color-selector">
+                        <div class="color-label">
+                            <h3>Color: <span id="selected-color-name">Black</span></h3>
+                        </div>
+                        <div class="color-options">
+                            <div class="color-option active" data-color="Black" data-color-code="#000000" style="background-color: #000000;">
+                                <i class="fa-solid fa-check checkmark"></i>
+                            </div>
+                            <div class="color-option" data-color="White" data-color-code="#ffffff" style="background-color: #ffffff; border: 1px solid #333;">
+                                <i class="fa-solid fa-check checkmark" style="color: #000;"></i>
+                            </div>
+                            <div class="color-option" data-color="Charcoal" data-color-code="#36454F" style="background-color: #36454F;">
+                                <i class="fa-solid fa-check checkmark"></i>
+                            </div>
+                            <div class="color-option" data-color="Burgundy" data-color-code="#800020" style="background-color: #800020;">
+                                <i class="fa-solid fa-check checkmark"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Size Selector -->
+                    <div class="size-selector">
+                        <div class="size-label">
+                            <h3>Select Size</h3>
+                            <span class="size-guide-link" id="open-size-guide">Size Guide <i class="fa-regular fa-ruler"></i></span>
+                        </div>
+                        <div class="size-options">
+                            <div class="size-option" data-size="S">S</div>
+                            <div class="size-option active" data-size="M">M</div>
+                            <div class="size-option" data-size="L">L</div>
+                            <div class="size-option" data-size="XL">XL</div>
+                            <div class="size-option" data-size="XXL">XXL</div>
+                        </div>
+                    </div>
+
+                    <!-- Quantity Selector -->
+                    <div class="quantity-selector">
+                        <div class="quantity-label">
+                            <h3>Quantity</h3>
+                        </div>
+                        <div class="quantity-controls">
+                            <button class="qty-btn" id="decrease-qty">−</button>
+                            <input type="number" class="qty-input" id="quantity" value="1" min="1" max="10" readonly>
+                            <button class="qty-btn" id="increase-qty">+</button>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="product-actions">
+                        <button class="add-to-cart-btn" id="add-to-cart">
+                            <i class="fa-solid fa-cart-shopping"></i> Add to Cart
+                        </button>
+                        <button class="buy-now-btn" id="buy-now">
+                            <i class="fa-solid fa-bolt"></i> Buy Now
+                        </button>
+                    </div>
+
+                    <button class="wishlist-btn-large" id="wishlist-btn">
+                        <i class="fa-regular fa-heart"></i> Add to Wishlist
+                    </button>
+
+                    <!-- Delivery Info -->
+                    <div class="delivery-info">
+                        <div class="delivery-item">
+                            <div class="delivery-icon">
+                                <i class="fa-solid fa-truck"></i>
+                            </div>
+                            <div class="delivery-text">
+                                <h4>Free Delivery</h4>
+                                <p>On orders above ₹999</p>
+                            </div>
+                        </div>
+                        <div class="delivery-item">
+                            <div class="delivery-icon">
+                                <i class="fa-solid fa-rotate-left"></i>
+                            </div>
+                            <div class="delivery-text">
+                                <h4>7 Day Returns</h4>
+                                <p>Easy return policy</p>
+                            </div>
+                        </div>
+                        <div class="delivery-item">
+                            <div class="delivery-icon">
+                                <i class="fa-solid fa-shield"></i>
+                            </div>
+                            <div class="delivery-text">
+                                <h4>Secure Payment</h4>
+                                <p>100% secure checkout</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product Meta -->
+                    <div class="product-meta">
+                        <div class="meta-item">
+                            <span class="meta-label">SKU:</span>
+                            <span class="meta-value">RZ-OST-001-BLK</span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Category:</span>
+                            <span class="meta-value"><a href="shop.html?category=tees">Oversized Tees</a></span>
+                        </div>
+                        <div class="meta-item">
+                            <span class="meta-label">Tags:</span>
+                            <span class="meta-value">
+                                <a href="shop.html?tag=oversized">Oversized</a>, 
+                                <a href="shop.html?tag=cotton">Cotton</a>, 
+                                <a href="shop.html?tag=streetwear">Streetwear</a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tabs Section -->
+            <div class="product-tabs">
+                <div class="tab-headers">
+                    <div class="tab-header active" data-tab="description">Description</div>
+                    <div class="tab-header" data-tab="specifications">Specifications</div>
+                    <div class="tab-header" data-tab="reviews">Reviews (24)</div>
+                    <div class="tab-header" data-tab="shipping">Shipping & Returns</div>
+                </div>
+
+                <!-- Description Tab -->
+                <div class="tab-content active" id="tab-description">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Product Description</h3>
+                    <p style="color: var(--secondary-text); line-height: 1.8; margin-bottom: 1.5rem;">The Signature Oversized Tee represents the essence of RECAZO - bold, comfortable, and unapologetically streetwear. Designed for the modern rebel who refuses to blend in, this t-shirt combines premium materials with meticulous craftsmanship.</p>
+                    <p style="color: var(--secondary-text); line-height: 1.8; margin-bottom: 1.5rem;">Made from 100% premium combed cotton, this tee offers exceptional softness and durability. The oversized fit provides a relaxed, contemporary silhouette that's perfect for layering or wearing solo. The front features our iconic RECAZO logo screen printed with high-quality inks that won't crack or fade.</p>
+                    <p style="color: var(--secondary-text); line-height: 1.8;">Whether you're hitting the streets or chilling with friends, the Signature Oversized Tee makes a statement without saying a word.</p>
+                </div>
+
+                <!-- Specifications Tab -->
+                <div class="tab-content" id="tab-specifications">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Technical Specifications</h3>
+                    <table class="specs-table">
+                        <tr>
+                            <td>Material</td>
+                            <td>100% Premium Combed Cotton (240 GSM)</td>
+                        </tr>
+                        <tr>
+                            <td>Fit</td>
+                            <td>Oversized Relaxed Fit</td>
+                        </tr>
+                        <tr>
+                            <td>Printing</td>
+                            <td>Screen Printed with Eco-friendly Inks</td>
+                        </tr>
+                        <tr>
+                            <td>Care Instructions</td>
+                            <td>Machine wash cold, tumble dry low, do not bleach</td>
+                        </tr>
+                        <tr>
+                            <td>Origin</td>
+                            <td>Made in India</td>
+                        </tr>
+                        <tr>
+                            <td>Neck Style</td>
+                            <td>Ribbed Crew Neck</td>
+                        </tr>
+                        <tr>
+                            <td>Sleeve Length</td>
+                            <td>Short Sleeves (Oversized Cut)</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- Reviews Tab -->
+                <div class="tab-content" id="tab-reviews">
+                    <div class="reviews-summary">
+                        <div class="average-rating">
+                            <div class="average-number">4.2</div>
+                            <div class="average-stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                            <div class="total-reviews">Based on 24 reviews</div>
+                        </div>
+                        <div class="rating-bars">
+                            <div class="rating-bar-item">
+                                <span class="rating-label">5 star</span>
+                                <div class="rating-bar-container">
+                                    <div class="rating-bar-fill" style="width: 70%"></div>
+                                </div>
+                                <span class="rating-percent">70%</span>
+                            </div>
+                            <div class="rating-bar-item">
+                                <span class="rating-label">4 star</span>
+                                <div class="rating-bar-container">
+                                    <div class="rating-bar-fill" style="width: 20%"></div>
+                                </div>
+                                <span class="rating-percent">20%</span>
+                            </div>
+                            <div class="rating-bar-item">
+                                <span class="rating-label">3 star</span>
+                                <div class="rating-bar-container">
+                                    <div class="rating-bar-fill" style="width: 5%"></div>
+                                </div>
+                                <span class="rating-percent">5%</span>
+                            </div>
+                            <div class="rating-bar-item">
+                                <span class="rating-label">2 star</span>
+                                <div class="rating-bar-container">
+                                    <div class="rating-bar-fill" style="width: 3%"></div>
+                                </div>
+                                <span class="rating-percent">3%</span>
+                            </div>
+                            <div class="rating-bar-item">
+                                <span class="rating-label">1 star</span>
+                                <div class="rating-bar-container">
+                                    <div class="rating-bar-fill" style="width: 2%"></div>
+                                </div>
+                                <span class="rating-percent">2%</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Individual Reviews -->
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="reviewer-name">Rahul M.</span>
+                            <span class="review-date">2 weeks ago</span>
+                        </div>
+                        <div class="review-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <div class="review-text">
+                            "Absolutely love this tee! The fabric is super soft and the oversized fit is perfect. Worth every rupee."
+                        </div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="reviewer-name">Priya S.</span>
+                            <span class="review-date">1 month ago</span>
+                        </div>
+                        <div class="review-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                        </div>
+                        <div class="review-text">
+                            "Great quality t-shirt. The print is high quality and hasn't cracked after multiple washes. Sizing is true to the size guide."
+                        </div>
+                    </div>
+
+                    <div class="review-card">
+                        <div class="review-header">
+                            <span class="reviewer-name">Arjun K.</span>
+                            <span class="review-date">2 months ago</span>
+                        </div>
+                        <div class="review-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <div class="review-text">
+                            "Best oversized tee I've bought in India. The 240 GSM fabric feels premium. Definitely buying more colors."
+                        </div>
+                    </div>
+
+                    <button class="btn btn-outline" style="margin-top: 2rem;">Load More Reviews</button>
+                </div>
+
+                <!-- Shipping Tab -->
+                <div class="tab-content" id="tab-shipping">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem;">Shipping Information</h3>
+                    <p style="color: var(--secondary-text); line-height: 1.8; margin-bottom: 1.5rem;">We offer fast and reliable shipping across India. Orders are processed within 24 hours and delivered within 3-5 business days.</p>
+                    
+                    <h4 style="margin: 2rem 0 1rem;">Shipping Rates</h4>
+                    <ul style="color: var(--secondary-text); line-height: 2;">
+                        <li>• Free shipping on orders above ₹999</li>
+                        <li>• ₹50 flat rate for orders below ₹999</li>
+                        <li>• Express shipping available at ₹100 extra</li>
+                    </ul>
+
+                    <h4 style="margin: 2rem 0 1rem;">Return Policy</h4>
+                    <p style="color: var(--secondary-text); line-height: 1.8;">We offer a 7-day return policy on all unused items in original packaging. Custom items are non-returnable. To initiate a return, please contact our support team.</p>
+                </div>
+            </div>
+
+            <!-- Related Products Section -->
+            <div class="related-products">
+                <h2 class="related-title">You May Also Like</h2>
+                <div class="product-grid">
+                    <!-- Related Product 1 -->
+                    <div class="product-card">
+                        <button class="wishlist-btn" data-id="2" aria-label="Add to wishlist">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <div class="product-img-wrapper">
+                            <img data-src="images/products/tee-2.jpg" alt="Rebel Graphic Print" class="product-img lazy-image">
+                            <div class="product-overlay">
+                                <button class="btn btn-primary add-to-cart-btn" data-id="2" data-name="Rebel Graphic Print" data-price="1299">Add to Cart</button>
+                                <button class="btn btn-outline quick-view-btn" data-id="2">Quick View</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">Oversized Tees</p>
+                            <h3 class="product-title">Rebel Graphic Print</h3>
+                            <p class="product-price">₹1,299</p>
+                        </div>
+                    </div>
+
+                    <!-- Related Product 2 -->
+                    <div class="product-card">
+                        <button class="wishlist-btn" data-id="5" aria-label="Add to wishlist">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <div class="product-img-wrapper">
+                            <img data-src="images/products/hoodie-2.jpg" alt="Cyberpunk Hoodie" class="product-img lazy-image">
+                            <div class="product-overlay">
+                                <button class="btn btn-primary add-to-cart-btn" data-id="5" data-name="Cyberpunk Hoodie" data-price="3499">Add to Cart</button>
+                                <button class="btn btn-outline quick-view-btn" data-id="5">Quick View</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">Hoodies</p>
+                            <h3 class="product-title">Cyberpunk Hoodie</h3>
+                            <p class="product-price">₹3,499</p>
+                        </div>
+                    </div>
+
+                    <!-- Related Product 3 -->
+                    <div class="product-card">
+                        <button class="wishlist-btn" data-id="4" aria-label="Add to wishlist">
+                            <i class="fa-regular fa-heart"></i>
+                        </button>
+                        <div class="product-img-wrapper">
+                            <img data-src="images/products/tee-3.jpg" alt="Phantom Tee" class="product-img lazy-image">
+                            <div class="product-overlay">
+                                <button class="btn btn-primary add-to-cart-btn" data-id="4" data-name="Phantom Tee" data-price="999">Add to Cart</button>
+                                <button class="btn btn-outline quick-view-btn" data-id="4">Quick View</button>
+                            </div>
+                        </div>
+                        <div class="product-info">
+                            <p class="product-category">Oversized Tees</p>
+                            <h3 class="product-title">Phantom Tee</h3>
+                            <p class="product-price">₹999</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Size Chart Modal -->
+    <div class="size-chart-modal" id="size-chart-modal">
+        <div class="size-chart-content">
+            <button class="close-modal" id="close-size-chart"><i class="fa-solid fa-xmark"></i></button>
+            <h3 style="font-size: 1.5rem; margin-bottom: 2rem;">Size Guide - Oversized Fit</h3>
+            <p class="size-note" style="color: var(--accent-color); margin-bottom: 1.5rem;"><i class="fa-solid fa-info-circle"></i> All measurements in inches</p>
+            <table class="size-table" style="width: 100%; border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <th style="padding: 1rem; text-align: center; border: 1px solid var(--border-color);">Size</th>
+                        <th style="padding: 1rem; text-align: center; border: 1px solid var(--border-color);">Chest</th>
+                        <th style="padding: 1rem; text-align: center; border: 1px solid var(--border-color);">Length</th>
+                        <th style="padding: 1rem; text-align: center; border: 1px solid var(--border-color);">Shoulder</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td style="padding: 1rem; text-align: center; border: 1px solid var(--border-color);">S</td><td>38-40</td><td>27</td><td>17</td></tr>
+                    <tr><td>M</td><td>40-42</td><td>28</td><td>18</td></tr>
+                    <tr><td>L</td><td>42-44</td><td>29</td><td>19</td></tr>
+                    <tr><td>XL</td><td>44-46</td><td>30</td><td>20</td></tr>
+                    <tr><td>XXL</td><td>46-48</td><td>31</td><td>21</td></tr>
+                </tbody>
+            </table>
+            <p style="color: var(--secondary-text); margin-top: 2rem; font-size: 0.9rem;">For oversized fit, we recommend choosing your regular size for a relaxed look, or size down for a more fitted appearance.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">RECAZO</a>
+                    <p class="footer-desc">Because Ordinary Isn't Enough. India's premium streetwear brand for the bold and rebellious.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/recazo.official/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://wa.me/919876543210" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4 class="footer-title">Shop</h4>
+                    <ul>
+                        <li><a href="shop.html">All Products</a></li>
+                        <li><a href="shop.html?category=tees">Oversized Tees</a></li>
+                        <li><a href="shop.html?category=hoodies">Hoodies</a></li>
+                        <li><a href="custom.html">Custom Prints</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4 class="footer-title">Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-newsletter">
+                    <h4 class="footer-title">Join The Rebellion</h4>
+                    <p class="footer-desc" style="margin-bottom: 1rem;">Subscribe for exclusive drops and 10% off your first order.</p>
+                    <form class="newsletter-form" data-validate>
+                        <input type="email" placeholder="Email Address" required>
+                        <button type="submit">→</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 RECAZO. All Rights Reserved.</p>
+                <div class="payment-methods">
+                    <i class="fa-brands fa-cc-visa fa-lg"></i>
+                    <i class="fa-brands fa-cc-mastercard fa-lg"></i>
+                    <i class="fa-brands fa-cc-paypal fa-lg"></i>
+                    <i class="fa-brands fa-cc-amex fa-lg"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Live Chat Widget -->
+    <div class="live-chat-widget">
+        <div class="chat-bubble" id="chat-bubble">
+            <i class="fa-solid fa-comment-dots"></i> 
+            <span class="chat-text">Need Help? Chat with Us</span>
+        </div>
+        <div class="chat-box" id="chat-box">
+            <div class="chat-header">
+                <h4>Recazo Support</h4>
+                <button id="close-chat"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="chat-body">
+                <div class="message incoming">
+                    Hi! 👋 Need help with this product? Ask me anything!
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Type a message...">
+                <button><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+    
+    <!-- Product Page JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Image Gallery
+            const mainImage = document.getElementById('main-product-image');
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            
+            thumbnails.forEach(thumb => {
+                thumb.addEventListener('click', function() {
+                    // Update active state
+                    thumbnails.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Update main image
+                    const imageSrc = this.dataset.image;
+                    mainImage.src = imageSrc;
+                    mainImage.alt = 'Product view - ' + this.querySelector('img').alt;
+                });
+            });
+
+            // Color Selection
+            const colorOptions = document.querySelectorAll('.color-option');
+            const selectedColorName = document.getElementById('selected-color-name');
+            
+            colorOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    colorOptions.forEach(o => o.classList.remove('active'));
+                    this.classList.add('active');
+                    selectedColorName.textContent = this.dataset.color;
+                });
+            });
+
+            // Size Selection
+            const sizeOptions = document.querySelectorAll('.size-option');
+            
+            sizeOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    if (!this.classList.contains('disabled')) {
+                        sizeOptions.forEach(o => o.classList.remove('active'));
+                        this.classList.add('active');
+                    }
+                });
+            });
+
+            // Quantity Controls
+            const decreaseBtn = document.getElementById('decrease-qty');
+            const increaseBtn = document.getElementById('increase-qty');
+            const quantityInput = document.getElementById('quantity');
+            
+            decreaseBtn.addEventListener('click', function() {
+                let currentValue = parseInt(quantityInput.value);
+                if (currentValue > 1) {
+                    quantityInput.value = currentValue - 1;
+                }
+            });
+            
+            increaseBtn.addEventListener('click', function() {
+                let currentValue = parseInt(quantityInput.value);
+                if (currentValue < 10) {
+                    quantityInput.value = currentValue + 1;
+                }
+            });
+
+            // Size Guide Modal
+            const sizeGuideBtn = document.getElementById('open-size-guide');
+            const sizeChartModal = document.getElementById('size-chart-modal');
+            const closeSizeChart = document.getElementById('close-size-chart');
+            
+            sizeGuideBtn.addEventListener('click', function() {
+                sizeChartModal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+            
+            closeSizeChart.addEventListener('click', function() {
+                sizeChartModal.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+            
+            sizeChartModal.addEventListener('click', function(e) {
+                if (e.target === sizeChartModal) {
+                    sizeChartModal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+
+            // Tabs
+            const tabHeaders = document.querySelectorAll('.tab-header');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const tabId = this.dataset.tab;
+                    
+                    tabHeaders.forEach(h => h.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+                    
+                    this.classList.add('active');
+                    document.getElementById(`tab-${tabId}`).classList.add('active');
+                });
+            });
+
+            // Wishlist Button
+            const wishlistBtn = document.getElementById('wishlist-btn');
+            
+            wishlistBtn.addEventListener('click', function() {
+                this.classList.toggle('active');
+                const icon = this.querySelector('i');
+                
+                if (this.classList.contains('active')) {
+                    icon.classList.remove('fa-regular');
+                    icon.classList.add('fa-solid');
+                    this.innerHTML = '<i class="fa-solid fa-heart"></i> Saved to Wishlist';
+                    
+                    // Show notification
+                    if (window.appCart) {
+                        window.appCart.showNotification('Added to wishlist! ❤️', 'success');
+                    }
+                } else {
+                    icon.classList.remove('fa-solid');
+                    icon.classList.add('fa-regular');
+                    this.innerHTML = '<i class="fa-regular fa-heart"></i> Add to Wishlist';
+                    
+                    if (window.appCart) {
+                        window.appCart.showNotification('Removed from wishlist', 'info');
+                    }
+                }
+            });
+
+            // Add to Cart
+            const addToCartBtn = document.getElementById('add-to-cart');
+            
+            addToCartBtn.addEventListener('click', function() {
+                const product = {
+                    id: '1',
+                    name: 'Signature Oversized Tee',
+                    price: 1499,
+                    quantity: parseInt(quantityInput.value),
+                    color: selectedColorName.textContent,
+                    size: document.querySelector('.size-option.active').dataset.size,
+                    image: mainImage.src
+                };
+                
+                if (window.appCart) {
+                    window.appCart.addItem(product);
+                    
+                    // Animation feedback
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 200);
+                }
+            });
+
+            // Buy Now
+            const buyNowBtn = document.getElementById('buy-now');
+            
+            buyNowBtn.addEventListener('click', function() {
+                const quantity = parseInt(quantityInput.value);
+                const total = 1499 * quantity;
+                
+                if (window.appCart) {
+                    window.appCart.showNotification(`Proceeding to checkout • Total: ₹${total.toLocaleString('en-IN')}`, 'info');
+                    
+                    // Simulate redirect
+                    setTimeout(() => {
+                        alert('Checkout page will be integrated with payment gateway');
+                    }, 1000);
+                }
+            });
+
+            // Keyboard navigation for modal
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && sizeChartModal.classList.contains('active')) {
+                    sizeChartModal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+
+            // Zoom effect on main image
+            const mainImageContainer = document.querySelector('.main-image');
+            
+            mainImageContainer.addEventListener('mousemove', function(e) {
+                const { left, top, width, height } = this.getBoundingClientRect();
+                const x = (e.clientX - left) / width * 100;
+                const y = (e.clientY - top) / height * 100;
+                
+                mainImage.style.transformOrigin = `${x}% ${y}%`;
+            });
+            
+            mainImageContainer.addEventListener('mouseleave', function() {
+                mainImage.style.transformOrigin = 'center center';
+            });
+        });
+    </script>
+</body>
+</html>

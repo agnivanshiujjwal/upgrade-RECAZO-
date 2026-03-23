@@ -1,0 +1,10 @@
+speechrecognition
+pyttsx3
+groq
+pywhatkit
+pyautogui
+pyaudio
+tk
+# Note: Tkinter is usually built into Python on Windows, 'tk' is sometimes used as a dummy or separate package, but standard library `tkinter` is used in code.
+# Also install pyinstaller for packaging
+pyinstaller

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RECAZO | Because Ordinary Isn't Enough - Premium Streetwear Brand</title>
+    
+    <!-- Meta Tags for SEO -->
+    <meta name="description" content="RECAZO is India's premium streetwear brand for those who dare to stand out. Shop oversized tees, custom hoodies, and exclusive streetwear collections.">
+    <meta name="keywords" content="streetwear, oversized tees, custom hoodies, indian streetwear, premium clothing, recazo">
+    <meta name="author" content="RECAZO">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="RECAZO | Because Ordinary Isn't Enough">
+    <meta property="og:description" content="Premium streetwear for those who dare to stand out. Shop the latest collection.">
+    <meta property="og:image" content="images/og-image.jpg">
+    <meta property="og:url" content="https://recazo.com">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Header / Navigation -->
+<header id="header">
+    <div class="container">
+        <nav>
+
+            <a href="index.html" class="logo">
+                <img src="images\image copy 2.png" alt="RECAZO Logo">
+            </a>
+            
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="shop.html">Shop</a>
+                <a href="custom.html">Custom</a>
+                <a href="gift.html" class="gift-link">Gift 🎁</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            
+            <div class="nav-icons">
+                <div class="cart-icon-wrapper" id="cart-icon" role="button" aria-label="Shopping cart" tabindex="0">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span class="cart-count">0</span>
+                </div>
+
+                <button class="menu-toggle" id="mobile-menu" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+
+        </nav>
+    </div>
+</header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">RECAZO</h1>
+                <p class="hero-subtitle">Because Ordinary Isn't Enough.</p>
+                <a href="shop.html" class="btn btn-primary">Shop Now</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="featured-products">
+        <div class="container">
+            <h2 class="section-title">New Drops</h2>
+            
+            <div class="product-grid" id="featured-grid">
+                <!-- Product 1 -->
+                <div class="product-card">
+                    <button class="wishlist-btn" data-id="1" aria-label="Add to wishlist">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                    <div class="product-img-wrapper">
+                        <img data-src="images\Screenshot 2026-03-07 172521.png" alt="Signature Oversized Tee - Black oversized t-shirt with Recazo logo" class="product-img lazy-image">
+                        <div class="product-overlay">
+                            <button class="btn btn-primary add-to-cart-btn" data-id="1" data-name="Signature Oversized Tee" data-price="1499" data-image="images/products/tee-1.jpg">Add to Cart</button>
+                            <button class="btn btn-outline quick-view-btn" data-id="1">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">T-Shirts</p>
+                        <h3 class="product-title">Signature Oversized Tee</h3>
+                        <p class="product-price">₹899</p>
+                        <div class="product-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <span>(24)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="product-card">
+                    <button class="wishlist-btn" data-id="2" aria-label="Add to wishlist">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                    <div class="product-img-wrapper">
+                        <img data-src="images\image.png" alt="Midnight Premium Hoodie - Black oversized hoodie" class="product-img lazy-image">
+                        <div class="product-overlay">
+                            <button class="btn btn-primary add-to-cart-btn" data-id="2" data-name="Midnight Premium Hoodie" data-price="2999" data-image="images/products/hoodie-1.jpg">Add to Cart</button>
+                            <button class="btn btn-outline quick-view-btn" data-id="2">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Hoodies</p>
+                        <h3 class="product-title">Midnight Premium Hoodie</h3>
+                        <p class="product-price">₹2,999</p>
+                        <div class="product-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <span>(42)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <button class="wishlist-btn" data-id="3" aria-label="Add to wishlist">
+                        <i class="fa-regular fa-heart"></i>
+                    </button>
+                    <div class="product-img-wrapper">
+                        <img data-src="images\image copy.png" alt="Rebel Graphic Print - White oversized tee with graphic print" class="product-img lazy-image">
+                        <div class="product-overlay">
+                            <button class="btn btn-primary add-to-cart-btn" data-id="3" data-name="Rebel Graphic Print" data-price="1299" data-image="images/products/tee-2.jpg">Add to Cart</button>
+                            <button class="btn btn-outline quick-view-btn" data-id="3">Quick View</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <p class="product-category">Custom Print</p>
+                        <h3 class="product-title">Rebel Graphic Print</h3>
+                        <p class="product-price">₹1,299</p>
+                        <div class="product-rating">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+                            <span>(18)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 4rem;">
+                <a href="shop.html" class="btn btn-outline">View All Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Preview Section -->
+    <section class="about-preview">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>Embrace The Rebellion</h2>
+                    <p>Recazo represents confidence, rebellion, premium street fashion and individuality. We craft pieces for Gen Z and young adults who refuse to blend in. Every stitch, every design tells a story of authenticity and boldness.</p>
+                    <a href="about.html" class="btn btn-outline">Read Our Story</a>
+                </div>
+                <div class="about-image">
+                    <img data-src="images\Beige_Black_Minimal_Simple_Modern_Handwritten_Graffiti_Typographic_Arts_and_Design_Logo-removebg-preview.png" alt="Recazo brand aesthetic" class="lazy-image">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Style Gallery Section -->
+    <section class="gallery">
+        <div class="container">
+            <h2 class="section-title">@RECAZO</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img data-src="images\image copy 3.png" alt="Recazo street style" class="lazy-image">
+                    <div class="gallery-overlay"><i class="fa-brands fa-instagram fa-2x"></i></div>
+                </div>
+                <div class="gallery-item">
+                    <img data-src="images\image copy 4.png" alt="Recazo fashion" class="lazy-image">
+                    <div class="gallery-overlay"><i class="fa-brands fa-instagram fa-2x"></i></div>
+                </div>
+                <div class="gallery-item">
+                    <img data-src="images\image copy 5.png" alt="Recazo lifestyle" class="lazy-image">
+                    <div class="gallery-overlay"><i class="fa-brands fa-instagram fa-2x"></i></div>
+                </div>
+                <div class="gallery-item">
+                    <img data-src="images\image copy 6.png" alt="Recazo community" class="lazy-image">
+                    <div class="gallery-overlay"><i class="fa-brands fa-instagram fa-2x"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Recazo Section -->
+    <section class="why-recazo">
+        <div class="container">
+            <h2 class="section-title">Why Choose Recazo?</h2>
+            <div class="why-grid">
+                <div class="why-card">
+                    <div class="card-icon-wrapper"><i class="fa-solid fa-gem"></i></div>
+                    <h3>Premium Quality</h3>
+                    <p>Crafted with 100% premium cotton for ultimate comfort and durability. Every piece is built to last.</p>
+                </div>
+                <div class="why-card">
+                    <div class="card-icon-wrapper"><i class="fa-solid fa-fire"></i></div>
+                    <h3>Unique Streetwear Designs</h3>
+                    <p>Bold, rebellious, and exclusive drops that make you stand out from the crowd.</p>
+                </div>
+                <div class="why-card">
+                    <div class="card-icon-wrapper"><i class="fa-solid fa-pen-nib"></i></div>
+                    <h3>Custom Clothing Experience</h3>
+                    <p>Create your own identity with our interactive custom design studio. Your vision, our craftsmanship.</p>
+                </div>
+                <div class="why-card">
+                    <div class="card-icon-wrapper"><i class="fa-solid fa-truck-fast"></i></div>
+                    <h3>Fast & Reliable Delivery</h3>
+                    <p>Get your hands on your fresh gear quickly with our express shipping across India.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Size Guide Section -->
+    <section class="size-guide">
+        <div class="container">
+            <div class="size-guide-content">
+                <h2 class="section-title">Find Your Perfect Fit</h2>
+                <p class="section-subtitle">Use our size guide to choose the perfect Recazo fit. All measurements are in inches.</p>
+                <div class="table-container">
+                    <table class="size-table">
+                        <thead>
+                            <tr>
+                                <th>Size</th>
+                                <th>Chest</th>
+                                <th>Length</th>
+                                <th>Shoulder</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>S</td><td>38-40</td><td>27</td><td>17</td></tr>
+                            <tr><td>M</td><td>40-42</td><td>28</td><td>18</td></tr>
+                            <tr><td>L</td><td>42-44</td><td>29</td><td>19</td></tr>
+                            <tr><td>XL</td><td>44-46</td><td>30</td><td>20</td></tr>
+                            <tr><td>XXL</td><td>46-48</td><td>31</td><td>21</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2 class="section-title text-center">FAQ</h2>
+            <div class="faq-accordion">
+                <div class="faq-item">
+                    <button class="faq-question">How long does delivery take? <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>Delivery usually takes 3-5 business days depending on your location. Metro cities get delivery within 2-3 days.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Can I customize my design? <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>Yes! Use our Custom Studio to upload logos, add text, and customize your clothing. Our team will review and approve your design.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">What is your return policy? <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>We offer a 7-day return policy for unused items in original packaging. Custom items are non-refundable.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Do you offer cash on delivery? <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>Yes, Cash on Delivery (COD) is available for all standard products above ₹499.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">How can I track my order? <i class="fa-solid fa-chevron-down"></i></button>
+                    <div class="faq-answer"><p>Once your order is shipped, you will receive a tracking link via email and SMS. You can also track from your account dashboard.</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Customer Care Section -->
+    <section class="customer-care">
+        <div class="container text-center">
+            <h2 class="section-title">Customer Care</h2>
+            <p class="subtitle" style="margin-bottom: 3rem;">We're here to help 24/7</p>
+            <div class="care-grid">
+                <div class="care-card">
+                    <div class="care-icon"><i class="fa-solid fa-phone"></i></div>
+                    <h4>Phone Support</h4>
+                    <p>+91 98765 43210</p>
+                    <p style="font-size: 0.9rem;">Mon-Sat, 10am-6pm</p>
+                </div>
+                <div class="care-card">
+                    <div class="care-icon"><i class="fa-solid fa-envelope"></i></div>
+                    <h4>Email Support</h4>
+                    <p>support@recazo.com</p>
+                    <p style="font-size: 0.9rem;">24 hour response</p>
+                </div>
+                <div class="care-card">
+                    <div class="care-icon"><i class="fa-brands fa-whatsapp"></i></div>
+                    <h4>WhatsApp Support</h4>
+                    <p>+91 98765 43210</p>
+                    <p style="font-size: 0.9rem;">Instant replies</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">RECAZO</a>
+                    <p class="footer-desc">Because Ordinary Isn't Enough. India's premium streetwear brand for the bold and rebellious youth.</p>
+                    <div class="social-links">
+                        <a href="https://www.instagram.com/recazo.official/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="https://wa.me/919876543210" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#" target="_blank" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                        <a href="#" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4 class="footer-title">Shop</h4>
+                    <ul>
+                        <li><a href="shop.html">All Products</a></li>
+                        <li><a href="shop.html?category=tees">Oversized Tees</a></li>
+                        <li><a href="shop.html?category=hoodies">Hoodies</a></li>
+                        <li><a href="custom.html">Custom Prints</a></li>
+                        <li><a href="gift.html">Gift Cards</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h4 class="footer-title">Company</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Returns & Exchanges</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-newsletter">
+                    <h4 class="footer-title">Join The Rebellion</h4>
+                    <p class="footer-desc" style="margin-bottom: 1rem;">Subscribe for exclusive drops and 10% off your first order.</p>
+                    <form class="newsletter-form" data-validate>
+                        <input type="email" placeholder="Email Address" required>
+                        <button type="submit">→</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 RECAZO. All Rights Reserved.</p>
+                <div class="payment-methods">
+                    <i class="fa-brands fa-cc-visa fa-lg" aria-label="Visa"></i>
+                    <i class="fa-brands fa-cc-mastercard fa-lg" aria-label="Mastercard"></i>
+                    <i class="fa-brands fa-cc-paypal fa-lg" aria-label="PayPal"></i>
+                    <i class="fa-brands fa-cc-amex fa-lg" aria-label="American Express"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Live Chat Widget -->
+    <div class="live-chat-widget">
+        <div class="chat-bubble" id="chat-bubble" role="button" aria-label="Open chat">
+            <i class="fa-solid fa-comment-dots"></i> 
+            <span class="chat-text">Need Help? Chat with Us</span>
+        </div>
+        <div class="chat-box" id="chat-box">
+            <div class="chat-header">
+                <h4>Recazo Support</h4>
+                <button id="close-chat" aria-label="Close chat"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="chat-body">
+                <div class="message incoming">
+                    Hello 👋<br>Welcome to Recazo Support.<br>How can we help you today?
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Type a message..." aria-label="Chat message">
+                <button aria-label="Send message"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+</body>
+</html>
